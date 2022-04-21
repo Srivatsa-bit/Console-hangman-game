@@ -1,13 +1,16 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
 
-    static void gameMethod(String gameWord) {
+    static void gameMethod(String[] words) {
         String checkWord = "";
+        Random r = new Random;
+        int index = r.nextInt(words.length);
+        gameWord = words[index];
         gameWord = gameWord.toLowerCase();
         int counter = 0;
         boolean checker = false;
-
         for (int x = 0; x < gameWord.length(); x++) {
             checkWord += "_";
         }
@@ -45,6 +48,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        gameMethod("Hello");
+        String[] words = {"hello", "world"};
+        gameMethod(words);
     }
 }
